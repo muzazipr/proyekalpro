@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <Windows.h>
 #include "Char_Race.h"
+
 void tutorial();
 char return_val;
 void menuakhir(char user,char topuser,char car,char topcar,int score,int topscore);
@@ -55,20 +57,21 @@ int main()
 	setcolor(15);
     printf("\n\tYour Score is : %d\n\n", score);
     
+    
  /**********Check High Score**********/
  	if(score>topscore){    
 	FILE *fptr;
-    fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Boring Stuff\\Tugas\\Daskom\\Proyek Akhir\\topscore.txt","w");
+    fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Proyek Akhir\\topscore.txt","w");
     fprintf(fptr,"%d",score);
     
     fclose(fptr);
     
-    fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Boring Stuff\\Tugas\\Daskom\\Proyek Akhir\\user.txt","w");
+    fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Proyek Akhir\\user.txt","w");
     fprintf(fptr,"%s",user);
  
  	fclose(fptr);
  
- 	fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Boring Stuff\\Tugas\\Daskom\\Proyek Akhir\\car.txt","w");
+ 	fptr = fopen("C:\\Users\\Ahli Irfan\\Desktop\\Proyek Akhir\\car.txt","w");
     fprintf(fptr,"%c",car);
  
  	fclose(fptr);
